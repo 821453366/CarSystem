@@ -5,7 +5,7 @@ var navs = [{
 	"children": [{
 		"title": "汽车数据统计",
 		"icon": "&#xe641;",
-		"href": "button.jsp"
+		"href": "car.jsp"
 	}
 	]},{
 	"title": "关于我们",

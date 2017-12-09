@@ -14,21 +14,21 @@ import java.util.Map;
  * @date 2017/12/9
  */
 public class CarAction extends ActionSupport {
-    private List<CarBean> carList;
+    private List<CarBean> resultData;
     private ICarServic carServic = new CarServic();
 
     public String find() {
         List<CarBean> carBean = carServic.carFind();
-        carList = carBean;
+        resultData = carBean;
         return "resultData";
     }
 
-    public List<CarBean> getCarList() {
-        return carList;
+    public List<CarBean> getResultData() {
+        return resultData;
     }
 
-    public void setCarList(List<CarBean> carList) {
-        this.carList = carList;
+    public void setResultData(List<CarBean> resultData) {
+        this.resultData = resultData;
     }
 
     public ICarServic getCarServic() {
