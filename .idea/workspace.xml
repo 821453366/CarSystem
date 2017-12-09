@@ -7,15 +7,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="78445415-8094-4801-aa54-5f3fe107c596" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/huan/car/util/GeneralMessage.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/huan/car/util/GeneralResults.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/huan/car/action/CarAction.class" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/car-4s/WEB-INF/classes/com/huan/car/action/CarAction.class" afterPath="$PROJECT_DIR$/target/car-4s/WEB-INF/classes/com/huan/car/action/CarAction.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/huan/car/action/CarAction.class" afterPath="$PROJECT_DIR$/target/classes/com/huan/car/action/CarAction.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/huan/car/action/CarAction.java" afterPath="$PROJECT_DIR$/src/main/java/com/huan/car/action/CarAction.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/mapping/car_struts.xml" afterPath="$PROJECT_DIR$/src/main/resources/mapping/car_struts.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/mapping/user_struts.xml" afterPath="$PROJECT_DIR$/src/main/resources/mapping/user_struts.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/struts.xml" afterPath="$PROJECT_DIR$/src/main/resources/struts.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/4s_car/datas/nav.js" afterPath="$PROJECT_DIR$/src/main/webapp/4s_car/datas/nav.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/car-4s/4s_car/datas/nav.js" afterPath="$PROJECT_DIR$/target/car-4s/4s_car/datas/nav.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/car-4s/META-INF/MANIFEST.MF" afterPath="$PROJECT_DIR$/target/car-4s/META-INF/MANIFEST.MF" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/4s_car/car.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/4s_car/car.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/car-4s/4s_car/car.jsp" afterPath="$PROJECT_DIR$/target/car-4s/4s_car/car.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/car-4s/WEB-INF/classes/mapping/car_struts.xml" afterPath="$PROJECT_DIR$/target/car-4s/WEB-INF/classes/mapping/car_struts.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/car-4s/WEB-INF/classes/mapping/user_struts.xml" afterPath="$PROJECT_DIR$/target/car-4s/WEB-INF/classes/mapping/user_struts.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/car-4s/WEB-INF/classes/struts.xml" afterPath="$PROJECT_DIR$/target/car-4s/WEB-INF/classes/struts.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/mapping/car_struts.xml" afterPath="$PROJECT_DIR$/target/classes/mapping/car_struts.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/mapping/user_struts.xml" afterPath="$PROJECT_DIR$/target/classes/mapping/user_struts.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/struts.xml" afterPath="$PROJECT_DIR$/target/classes/struts.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -51,21 +58,31 @@
       <file leaf-file-name="user_struts.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/mapping/user_struts.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="8" column="62" lean-forward="true" selection-start-line="8" selection-start-column="62" selection-end-line="8" selection-end-column="62" />
+            <state relative-caret-position="154">
+              <caret line="7" column="23" lean-forward="false" selection-start-line="7" selection-start-column="23" selection-end-line="7" selection-end-column="23" />
               <folding />
             </state>
           </provider>
           <provider editor-type-id="com.intellij.struts2.graph.fileEditor.Struts2GraphFileEditorProvider">
             <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="car.jsp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/4s_car/car.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="572">
+              <caret line="62" column="19" lean-forward="true" selection-start-line="62" selection-start-column="19" selection-end-line="62" selection-end-column="19" />
+              <folding />
+            </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="car_struts.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/mapping/car_struts.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="8" column="58" lean-forward="true" selection-start-line="8" selection-start-column="58" selection-end-line="8" selection-end-column="58" />
+            <state relative-caret-position="264">
+              <caret line="12" column="40" lean-forward="false" selection-start-line="12" selection-start-column="40" selection-end-line="12" selection-end-column="40" />
               <folding />
             </state>
           </provider>
@@ -74,17 +91,54 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CarAction.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="GeneralResults.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/huan/car/util/GeneralResults.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="66">
+              <caret line="6" column="23" lean-forward="false" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="23" />
+              <folding>
+                <element signature="e#1343#1344#0" expanded="true" />
+                <element signature="e#1370#1371#0" expanded="true" />
+                <element signature="e#1410#1411#0" expanded="true" />
+                <element signature="e#1442#1443#0" expanded="true" />
+                <element signature="e#1472#1473#0" expanded="true" />
+                <element signature="e#1498#1499#0" expanded="true" />
+                <element signature="e#1536#1537#0" expanded="true" />
+                <element signature="e#1566#1567#0" expanded="true" />
+                <element signature="e#1600#1601#0" expanded="true" />
+                <element signature="e#1630#1631#0" expanded="true" />
+                <element signature="e#1677#1678#0" expanded="true" />
+                <element signature="e#1715#1716#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GeneralMessage.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/huan/car/util/GeneralMessage.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="198">
+              <caret line="9" column="54" lean-forward="false" selection-start-line="9" selection-start-column="54" selection-end-line="9" selection-end-column="54" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CarAction.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/huan/car/action/CarAction.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="15" column="13" lean-forward="false" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+            <state relative-caret-position="188">
+              <caret line="33" column="79" lean-forward="false" selection-start-line="33" selection-start-column="79" selection-end-line="33" selection-end-column="79" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#634#635#0" expanded="true" />
-                <element signature="e#667#668#0" expanded="true" />
-                <element signature="e#726#727#0" expanded="true" />
-                <element signature="e#770#771#0" expanded="true" />
+                <element signature="e#1130#1131#0" expanded="true" />
+                <element signature="e#1163#1164#0" expanded="true" />
+                <element signature="e#1223#1224#0" expanded="true" />
+                <element signature="e#1267#1268#0" expanded="true" />
+                <element signature="e#1461#1462#0" expanded="true" />
+                <element signature="e#1486#1487#0" expanded="true" />
+                <element signature="e#1519#1520#0" expanded="true" />
+                <element signature="e#1547#1548#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -94,7 +148,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/resources/struts.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="176">
-              <caret line="8" column="38" lean-forward="true" selection-start-line="8" selection-start-column="38" selection-end-line="8" selection-end-column="38" />
+              <caret line="8" column="35" lean-forward="false" selection-start-line="8" selection-start-column="35" selection-end-line="8" selection-end-column="35" />
               <folding />
             </state>
           </provider>
@@ -116,8 +170,8 @@
       <file leaf-file-name="UserAction.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/huan/car/action/UserAction.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="117">
-              <caret line="15" column="13" lean-forward="false" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+            <state relative-caret-position="439">
+              <caret line="30" column="27" lean-forward="true" selection-start-line="30" selection-start-column="27" selection-end-line="30" selection-end-column="27" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#addUser#0;class#UserAction#0" expanded="false" />
@@ -132,8 +186,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="Class" />
         <option value="Jsp File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -201,12 +255,14 @@
         <option value="$PROJECT_DIR$/src/main/webapp/4s_car/index.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/huan/car/action/CarServlet.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/webapp/4s_car/car.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/4s_car/datas/nav.js" />
         <option value="$PROJECT_DIR$/src/main/resources/mapping/user_struts.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/struts.xml" />
-        <option value="$PROJECT_DIR$/src/main/webapp/4s_car/datas/nav.js" />
-        <option value="$PROJECT_DIR$/src/main/java/com/huan/car/action/CarAction.java" />
         <option value="$PROJECT_DIR$/src/main/resources/mapping/car_struts.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/huan/car/util/GeneralResults.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/huan/car/util/GeneralMessage.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/huan/car/action/CarAction.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/4s_car/car.jsp" />
       </list>
     </option>
   </component>
@@ -307,6 +363,15 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="car" type="462c0819:PsiDirectoryNode" />
               <item name="action" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CarSystem" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CarSystem" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="car" type="462c0819:PsiDirectoryNode" />
+              <item name="util" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="CarSystem" type="b2602c69:ProjectViewProjectNode" />
@@ -888,7 +953,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="52834000" />
+    <option name="totallyTimeSpent" value="57879000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="25" width="1920" height="1055" extended-state="6" />
@@ -906,7 +971,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.35903084" sideWeight="0.49570817" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35903084" sideWeight="0.49570817" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30947137" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1002,14 +1067,6 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/huan/car/action/CarAction.java</url>
-          <line>21</line>
-          <properties />
-          <option name="timeStamp" value="108" />
-        </line-breakpoint>
-      </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog>
           <selected-grouping-rules>
@@ -1028,15 +1085,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/4s_car/js/layout.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/4s_car/js/city.js" />
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/4s_car/auxiliar.html" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/huan/car/dao/impl/TronClassDao.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/huan/car/a.java" />
     <entry file="file://$PROJECT_DIR$/src/main/webapp/4s_car/css/eu_manage.css">
@@ -1125,6 +1173,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="891">
           <caret line="35" column="9" lean-forward="false" selection-start-line="35" selection-start-column="9" selection-end-line="35" selection-end-column="9" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1182,6 +1231,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="393">
           <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1204,6 +1256,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="279">
           <caret line="14" column="7" lean-forward="false" selection-start-line="14" selection-start-column="7" selection-end-line="14" selection-end-column="7" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1250,53 +1303,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/4s_car/car.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="25" column="27" lean-forward="false" selection-start-line="25" selection-start-column="27" selection-end-line="25" selection-end-column="27" />
-          <folding>
-            <marker date="1512823518302" expanded="true" signature="2351:2551" ph="{...}" />
-            <marker date="1512823518302" expanded="true" signature="2455:2543" ph="{...}" />
-            <marker date="1512823518302" expanded="true" signature="2569:3828" ph="..." />
-            <marker date="1512823518302" expanded="false" signature="2592:2605" ph="..." />
-            <marker date="1512823518302" expanded="true" signature="2606:3750" ph="..." />
-            <marker date="1512823518302" expanded="true" signature="2663:3743" ph="..." />
-            <marker date="1512823518302" expanded="true" signature="2720:2954" ph="..." />
-            <marker date="1512823518302" expanded="true" signature="2763:2938" ph="..." />
-            <marker date="1512823518302" expanded="true" signature="2856:2919" ph="..." />
-            <marker date="1512823518302" expanded="true" signature="2884:2890" ph="&amp;nbsp;" />
-            <marker date="1512823518302" expanded="true" signature="2968:3657" ph="..." />
-            <marker date="1512823518302" expanded="true" signature="3008:3642" ph="..." />
-            <marker date="1512823518302" expanded="true" signature="3035:3137" ph="..." />
-            <marker date="1512823518302" expanded="true" signature="3161:3558" ph="..." />
-            <marker date="1512823518302" expanded="true" signature="3182:3533" ph="..." />
-            <marker date="1512823518302" expanded="true" signature="3595:3621" ph="..." />
-            <marker date="1512823518302" expanded="true" signature="3850:6936" ph="..." />
-            <marker date="1512823518302" expanded="true" signature="3927:6927" ph="..." />
-            <marker date="1512823518302" expanded="true" signature="4000:6915" ph="..." />
-            <marker date="1512823518302" expanded="true" signature="4100:4738" ph="..." />
-            <marker date="1512823518302" expanded="true" signature="4159:4719" ph="..." />
-            <marker date="1512823518302" expanded="true" signature="4777:5042" ph="..." />
-            <marker date="1512823518302" expanded="true" signature="4886:5023" ph="..." />
-            <marker date="1512823518302" expanded="true" signature="5084:5755" ph="..." />
-            <marker date="1512823518302" expanded="true" signature="5127:5410" ph="..." />
-            <marker date="1512823518302" expanded="true" signature="5243:5387" ph="..." />
-            <marker date="1512823518302" expanded="true" signature="5454:5736" ph="..." />
-            <marker date="1512823518302" expanded="true" signature="5570:5713" ph="..." />
-            <marker date="1512823518302" expanded="true" signature="5797:6550" ph="..." />
-            <marker date="1512823518302" expanded="true" signature="5840:6165" ph="..." />
-            <marker date="1512823518302" expanded="true" signature="5957:6142" ph="..." />
-            <marker date="1512823518302" expanded="true" signature="6064:6115" ph="..." />
-            <marker date="1512823518302" expanded="true" signature="6209:6530" ph="..." />
-            <marker date="1512823518302" expanded="true" signature="6325:6507" ph="..." />
-            <marker date="1512823518302" expanded="true" signature="6429:6480" ph="..." />
-            <marker date="1512823518302" expanded="true" signature="6592:6900" ph="..." />
-            <marker date="1512823518302" expanded="true" signature="6695:6881" ph="..." />
-            <marker date="1512823518302" expanded="true" signature="6943:6951" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_101/src.zip!/java/net/DualStackPlainSocketImpl.java" />
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
@@ -1313,26 +1319,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/huan/car/action/UserAction.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="117">
-          <caret line="15" column="13" lean-forward="false" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+        <state relative-caret-position="439">
+          <caret line="30" column="27" lean-forward="true" selection-start-line="30" selection-start-column="27" selection-end-line="30" selection-end-column="27" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#addUser#0;class#UserAction#0" expanded="false" />
           </folding>
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapping/user_struts.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="8" column="62" lean-forward="true" selection-start-line="8" selection-start-column="62" selection-end-line="8" selection-end-column="62" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="com.intellij.struts2.graph.fileEditor.Struts2GraphFileEditorProvider">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/4s_car/datas/nav.js">
@@ -1343,10 +1346,21 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapping/user_struts.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="7" column="23" lean-forward="false" selection-start-line="7" selection-start-column="23" selection-end-line="7" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="com.intellij.struts2.graph.fileEditor.Struts2GraphFileEditorProvider">
+        <state />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/struts.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="176">
-          <caret line="8" column="38" lean-forward="true" selection-start-line="8" selection-start-column="38" selection-end-line="8" selection-end-column="38" />
+          <caret line="8" column="35" lean-forward="false" selection-start-line="8" selection-start-column="35" selection-end-line="8" selection-end-column="35" />
           <folding />
         </state>
       </provider>
@@ -1356,8 +1370,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/mapping/car_struts.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="8" column="58" lean-forward="true" selection-start-line="8" selection-start-column="58" selection-end-line="8" selection-end-column="58" />
+        <state relative-caret-position="264">
+          <caret line="12" column="40" lean-forward="false" selection-start-line="12" selection-start-column="40" selection-end-line="12" selection-end-column="40" />
           <folding />
         </state>
       </provider>
@@ -1365,17 +1379,58 @@
         <state />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/huan/car/util/GeneralResults.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="66">
+          <caret line="6" column="23" lean-forward="false" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="23" />
+          <folding>
+            <element signature="e#1343#1344#0" expanded="true" />
+            <element signature="e#1370#1371#0" expanded="true" />
+            <element signature="e#1410#1411#0" expanded="true" />
+            <element signature="e#1442#1443#0" expanded="true" />
+            <element signature="e#1472#1473#0" expanded="true" />
+            <element signature="e#1498#1499#0" expanded="true" />
+            <element signature="e#1536#1537#0" expanded="true" />
+            <element signature="e#1566#1567#0" expanded="true" />
+            <element signature="e#1600#1601#0" expanded="true" />
+            <element signature="e#1630#1631#0" expanded="true" />
+            <element signature="e#1677#1678#0" expanded="true" />
+            <element signature="e#1715#1716#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/huan/car/util/GeneralMessage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="9" column="54" lean-forward="false" selection-start-line="9" selection-start-column="54" selection-end-line="9" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/huan/car/action/CarAction.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="15" column="13" lean-forward="false" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+        <state relative-caret-position="188">
+          <caret line="33" column="79" lean-forward="false" selection-start-line="33" selection-start-column="79" selection-end-line="33" selection-end-column="79" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#634#635#0" expanded="true" />
-            <element signature="e#667#668#0" expanded="true" />
-            <element signature="e#726#727#0" expanded="true" />
-            <element signature="e#770#771#0" expanded="true" />
+            <element signature="e#1130#1131#0" expanded="true" />
+            <element signature="e#1163#1164#0" expanded="true" />
+            <element signature="e#1223#1224#0" expanded="true" />
+            <element signature="e#1267#1268#0" expanded="true" />
+            <element signature="e#1461#1462#0" expanded="true" />
+            <element signature="e#1486#1487#0" expanded="true" />
+            <element signature="e#1519#1520#0" expanded="true" />
+            <element signature="e#1547#1548#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/4s_car/car.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="572">
+          <caret line="62" column="19" lean-forward="true" selection-start-line="62" selection-start-column="19" selection-end-line="62" selection-end-column="19" />
+          <folding />
         </state>
       </provider>
     </entry>

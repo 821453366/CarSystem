@@ -24,8 +24,8 @@
         var cartype = [];
         var dataLength = [];
         $.post("/car_find",
-            function (data, status) {
-            console.log(data)
+            function (data) {
+                data = data.data;
                 for (var i = 0; i < data.length; i++) {
                     cartype = data[i];
 
@@ -48,18 +48,23 @@
             },
             "json"
         );
-
 //删除数据
     });
 
     //编辑数据
     function dele(id) {
-        $.post("/CarServlet?method=delect",
-            {id: id},
-            function (data, status) {
-                alert("删除成功");
-                window.location.reload();
-            });
+        layer.confirm('确认删除？', function (index) {
+            $.post("/car_delete",
+                {id: id},
+                function (data) {
+                    layer.msg(data.msg,{time:300}, function () {
+                        window.location.reload();
+                    });
+                });
+            layer.close(index);
+            //向服务端发送删除指令
+        });
+
     }
 
 </script>

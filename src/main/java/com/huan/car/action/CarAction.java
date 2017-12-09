@@ -3,6 +3,8 @@ package com.huan.car.action;
 import com.huan.car.entity.CarBean;
 import com.huan.car.servic.ICarServic;
 import com.huan.car.servic.impl.CarServic;
+import com.huan.car.util.GeneralMessage;
+import com.huan.car.util.GeneralResults;
 import com.opensymphony.xwork2.ActionSupport;
 
 import java.util.HashMap;
@@ -14,20 +16,33 @@ import java.util.Map;
  * @date 2017/12/9
  */
 public class CarAction extends ActionSupport {
-    private List<CarBean> resultData;
+    private GeneralResults resultData;
+    private int id;
     private ICarServic carServic = new CarServic();
+//    private GeneralResults generalResults = new GeneralResults();
 
     public String find() {
         List<CarBean> carBean = carServic.carFind();
-        resultData = carBean;
+
+        resultData =  GeneralResults.success(carBean,GeneralMessage.QUERY_SUCCESS);
         return "resultData";
     }
 
-    public List<CarBean> getResultData() {
+    public String delete()  {
+        try {
+            carServic.delete(id);
+            resultData = GeneralResults.success(GeneralMessage.DELETE_SUCCESS);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return "resultData";
+    }
+
+    public GeneralResults getResultData() {
         return resultData;
     }
 
-    public void setResultData(List<CarBean> resultData) {
+    public void setResultData(GeneralResults resultData) {
         this.resultData = resultData;
     }
 
@@ -37,6 +52,14 @@ public class CarAction extends ActionSupport {
 
     public void setCarServic(ICarServic carServic) {
         this.carServic = carServic;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }
 

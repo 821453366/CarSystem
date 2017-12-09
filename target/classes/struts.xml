@@ -4,9 +4,9 @@
         "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
         "http://struts.apache.org/dtds/struts-2.5.dtd">
 
-<struts>
+    <struts>
     <include file="/mapping/user_struts.xml"/>
     <include file="/mapping/car_struts.xml"/>
-    <constant name="struts.enable.DynamicMethodInvocation" value="false" />
+    <!--<constant name="struts.enable.DynamicMethodInvocation" value="false" />-->
 
 </struts>

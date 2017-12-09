@@ -5,12 +5,12 @@
 
 <struts>
 
-    <package name="order" extends="json-default,struts-default">
+    <package name="car" extends="json-default,struts-default" >
         <action name="car_*" class="com.huan.car.action.CarAction"  method="{1}">
             <result name="resultData" type="json">
                 <param name="root">resultData</param>
             </result>
-            <allowed-methods>find</allowed-methods>
+            <allowed-methods>find,delete</allowed-methods>
         </action>
     </package>
 
