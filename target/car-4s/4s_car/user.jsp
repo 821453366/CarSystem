@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@taglib prefix="s" uri="/struts-tags" %>
 <!doctype html>
 <html>
 <head>
@@ -22,23 +23,22 @@
         $("#refer_div2").hide();
         var cartype = [];
         var dataLength = [];
-        $.post("/CarServlet?method=carFind",
-            function (data, status) {
+        $.post("/car_find",
+            function (data) {
+                data = data.data;
                 for (var i = 0; i < data.length; i++) {
                     cartype = data[i];
 
                     $(".tr_1").append("<tr> " +
-                        "<td><input value='1' type='checkbox'></td>" +
                         "<td>" + (i + 1) + "</td>" +
-                        "<td>" + cartype['carname'] + "</td>" +
-                        "<td>" + cartype['carEntity'] + "</td>" +
-                        "<td>" + cartype['carPrice'] + "</td>" +
-                        "<td>" + cartype['carSize'] + "</td>" +
-                        "<td>" + cartype['carFuelConsumption'] + "</td>" +
-                        "<td>" + cartype['carDisplacement'] + "</td>" +
+                        "<td>" + cartype['username'] + "</td>" +
+                        "<td>" + cartype['sex'] + "</td>" +
+                        "<td>" + cartype['phone'] + "</td>" +
+                        "<td>" + cartype['age'] + "</td>" +
+                        "<td>" + cartype['position'] + "</td>" +
                         "<td>" +
-                        "<button   class='layui-btn layui-btn-mini'>编辑</button>" +
-                        "<button href='javascript:;' data-id='1' data-opt='del' class='layui-btn layui-btn-danger layui-btn-mini' onclick='dele( " + cartype['id'] + ")'>删除</button>" +
+                        "<button   class='layui-btn layui-btn-small'>编辑</button>" +
+                        "<button href='javascript:;' data-id='1' data-opt='del' class='layui-btn layui-btn-danger layui-btn-small' onclick='dele( " + cartype['id'] + ")'>删除</button>" +
                         "</td> </tr>"
                     );
                 }
@@ -46,18 +46,23 @@
             },
             "json"
         );
-
 //删除数据
     });
 
     //编辑数据
-    function dele(id){
-        $.post("/CarServlet?method=delect",
-            {id :id},
-            function (data, status) {
-                alert("删除成功");
-                window.location.reload();
-            });
+    function dele(id) {
+        layer.confirm('确认删除？', function (index) {
+            $.post("/car_delete",
+                {id: id},
+                function (data) {
+                    layer.msg(data.msg,{time:300}, function () {
+                        window.location.reload();
+                    });
+                });
+            layer.close(index);
+            //向服务端发送删除指令
+        });
+
     }
 
 </script>
@@ -70,7 +75,7 @@
         <div style=''>
 
             <div class='layui-btn-group'>
-                <button id='refer' class='refer layui-btn layui-btn-normal layui-btn-small'><i class='layui-icon'></i>&nbsp;增加车系
+                <button id='refer' class='refer layui-btn layui-btn-normal layui-btn'><i class='layui-icon'></i>&nbsp;增加车系
                 </button>
             </div>
 
@@ -78,19 +83,15 @@
         <div>
             <table class='layui-table'>
                 <colgroup>
-                    <col width='40'>
-                    <col width='60'>
                 </colgroup>
                 <thead>
                 <tr>
-                    <th><input type='checkbox' id='selected-all'></th>
                     <th>编号</th>
-                    <th>品牌</th>
-                    <th>车型号</th>
-                    <th>价钱</th>
-                    <th>座位</th>
-                    <th>耗油量</th>
-                    <th>库存</th>
+                    <th>用户名</th>
+                    <th>性别</th>
+                    <th>手机号</th>
+                    <th>年龄</th>
+                    <th>职位</th>
                     <th>操作</th>
                 </tr>
                 </thead>
@@ -106,13 +107,13 @@
 <script type='text/javascript' src='plugins/layui/layui.js'></script>
 </body>
 
-<div id='refer_div'>
-    <form class='layui-form' action='/CarServlet?method=save' method='post'>
+<div id='refer_div' >
+    <form class='layui-form' id ="info">
         <div class='huan_a'></div>
         <div class='layui-form-item'>
             <label class='layui-form-label'>品牌</label>
             <div class='layui-input-inline'>
-                <select name='carname' lay-filter='aihao'>
+                <select name='carBean.carname' lay-filter='aihao'>
                     <%--<option value=''></option>--%>
                     <option value='宝马' selected=''>宝马</option>
                     <option value='东风本田'>东风本田</option>
@@ -128,21 +129,21 @@
             <div class='layui-inline'>
                 <label class='layui-form-label'>车型号</label>
                 <div class='layui-input-inline'>
-                    <input type='text' name='carEntity' lay-verify='text' autocomplete='off' class='layui-input'>
+                    <input type='text' name='carBean.carEntity' lay-verify='text' autocomplete='off' class='layui-input'>
                 </div>
             </div>
             <div class='layui-form-item'>
                 <div class='layui-inline'>
                     <label class='layui-form-label'>价钱</label>
                     <div class='layui-input-inline'>
-                        <input type='text' name='carPrice' lay-verify='text' autocomplete='off' class='layui-input'>
+                        <input type='text' name='carBean.carPrice' lay-verify='text' autocomplete='off' class='layui-input'>
                     </div>
                 </div>
 
                 <div class='layui-inline'>
                     <label class='layui-form-label'>座位</label>
                     <div class='layui-input-inline'>
-                        <input type='text' name='carSize' lay-verify='text' autocomplete='off' class='layui-input'>
+                        <input type='text' name='carBean.carSize' lay-verify='text' autocomplete='off' class='layui-input'>
                     </div>
                 </div>
             </div>
@@ -150,14 +151,16 @@
                 <div class='layui-inline'>
                     <label class='layui-form-label'>耗油量</label>
                     <div class='layui-input-inline'>
-                        <input type='text' name='carFuelConsumption' lay-verify='text' autocomplete='off' class='layui-input'>
+                        <input type='text' name='carBean.carFuelConsumption' lay-verify='text' autocomplete='off'
+                               class='layui-input'>
                     </div>
                 </div>
 
                 <div class='layui-inline'>
                     <label class='layui-form-label'>库存</label>
                     <div class='layui-input-inline'>
-                        <input type='text' name='carDisplacement' lay-verify='text' autocomplete='off' class='layui-input'>
+                        <input type='text' name='carBean.carDisplacement' lay-verify='text' autocomplete='off'
+                               class='layui-input'>
                     </div>
                 </div>
 
@@ -165,14 +168,18 @@
             <div class='layui-form-item'>
                 <div class='huan_a'></div>
                 <div class='layui-input-block huan_center'>
-                    <button class='layui-btn' type='submit'>立即提交</button>
+                    <button class='layui-btn' type='button' onclick="addCar()">立即提交</button>
                     <button type='reset' class='layui-btn layui-btn-primary'>重置</button>
                 </div>
             </div>
         </div>
     </form>
 
+
 </div>
 
+<div>
+
+</div>
 
 </html>

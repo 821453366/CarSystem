@@ -29,6 +29,7 @@ public class CarDao extends BaseDao implements ICarDao {
     public void save(CarBean carBean) {
         String sql = "INSERT INTO car (carname,carEntity,carPrice,carSize,carFuelConsumption,carDisplacement) VALUES(?,?,?,?,?,?); " ;
         Object[] paramsValue = {carBean.getCarname(),carBean.getCarEntity(),carBean.getCarPrice(),carBean.getCarSize(),carBean.getCarFuelConsumption(),carBean.getCarDisplacement()};
+        System.out.println(carBean.getCarname());
         super.update(sql,paramsValue);
 
     }

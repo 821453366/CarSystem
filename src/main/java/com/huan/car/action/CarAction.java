@@ -17,6 +17,7 @@ import java.util.Map;
  */
 public class CarAction extends ActionSupport {
     private GeneralResults resultData;
+    private CarBean carBean;
     private int id;
     private ICarServic carServic = new CarServic();
 //    private GeneralResults generalResults = new GeneralResults();
@@ -38,6 +39,15 @@ public class CarAction extends ActionSupport {
         return "resultData";
     }
 
+    public String add(){
+        try{
+            carServic.save(carBean);
+            resultData = GeneralResults.success(GeneralMessage.ADD_SUCCESS);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return "resultData";
+    }
     public GeneralResults getResultData() {
         return resultData;
     }
@@ -60,6 +70,14 @@ public class CarAction extends ActionSupport {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public CarBean getCarBean() {
+        return carBean;
+    }
+
+    public void setCarBean(CarBean carBean) {
+        this.carBean = carBean;
     }
 }
 

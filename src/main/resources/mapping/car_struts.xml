@@ -10,7 +10,7 @@
             <result name="resultData" type="json">
                 <param name="root">resultData</param>
             </result>
-            <allowed-methods>find,delete</allowed-methods>
+            <allowed-methods>find,delete,add</allowed-methods>
         </action>
     </package>
 

@@ -17,6 +17,7 @@ $(document).ready(function () {
 
         });
     });
+
     $("#refer2").click(function () {
 
         layer.open({
@@ -60,3 +61,15 @@ $(document).ready(function () {
 
     });
 });
+
+function addCar() {
+    var CarBean = $("#info").serialize();
+    $.post("/car_add",
+        CarBean,
+        function (data) {
+            layer.msg(data.msg,{time:300}, function () {
+                window.location.reload();
+            });
+    });
+
+}
