@@ -22,7 +22,7 @@
         $("#refer_div2").hide();
         var cartype = [];
         var dataLength = [];
-        $.post("CarServlet?method=carFind",
+        $.post("/CarServlet?method=carFind",
             function (data, status) {
                 for (var i = 0; i < data.length; i++) {
                     cartype = data[i];
@@ -52,7 +52,7 @@
 
     //编辑数据
     function dele(id){
-        $.post("CarServlet?method=delect",
+        $.post("/CarServlet?method=delect",
             {id :id},
             function (data, status) {
                 alert("删除成功");
@@ -107,7 +107,7 @@
 </body>
 
 <div id='refer_div'>
-    <form class='layui-form' action='CarServlet?method=save' method='post'>
+    <form class='layui-form' action='/CarServlet?method=save' method='post'>
         <div class='huan_a'></div>
         <div class='layui-form-item'>
             <label class='layui-form-label'>品牌</label>

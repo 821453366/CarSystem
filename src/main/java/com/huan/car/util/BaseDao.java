@@ -1,4 +1,4 @@
-package com.huan.car.dao;
+package com.huan.car.util;
 
 import com.huan.car.util.ConnUtil;
 import org.apache.commons.beanutils.BeanUtils;

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dataSource name="car@localhost">
-  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.1">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.4">
     <root id="1"/>
     <schema id="2" parent="1" name="car">
       <Current>1</Current>
@@ -14,51 +14,95 @@
     <schema id="8" parent="1" name="information_schema"/>
     <schema id="9" parent="1" name="jdsc"/>
     <schema id="10" parent="1" name="jd_mysql"/>
-    <schema id="11" parent="1" name="mahuan"/>
-    <schema id="12" parent="1" name="mysql"/>
-    <schema id="13" parent="1" name="performance_schema"/>
-    <schema id="14" parent="1" name="test"/>
-    <schema id="15" parent="1" name="text"/>
-    <schema id="16" parent="1" name="t_user"/>
-    <schema id="17" parent="1" name="wxobao"/>
-    <table id="18" parent="2" name="car"/>
-    <column id="19" parent="18" name="id">
+    <schema id="11" parent="1" name="mysql"/>
+    <schema id="12" parent="1" name="performance_schema"/>
+    <schema id="13" parent="1" name="test"/>
+    <schema id="14" parent="1" name="text"/>
+    <schema id="15" parent="1" name="t_user"/>
+    <schema id="16" parent="1" name="wxobao"/>
+    <schema id="17" parent="1" name="db_recover"/>
+    <schema id="18" parent="1" name="hibernate"/>
+    <schema id="19" parent="1" name="sams"/>
+    <schema id="20" parent="1" name="shiro"/>
+    <schema id="21" parent="1" name="stuinfo"/>
+    <schema id="22" parent="1" name="system"/>
+    <schema id="23" parent="1" name="web"/>
+    <table id="24" parent="2" name="car"/>
+    <table id="25" parent="2" name="user"/>
+    <column id="26" parent="24" name="id">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="20" parent="18" name="carname">
+    <column id="27" parent="24" name="carname">
       <Position>2</Position>
       <DataType>varchar(20)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="21" parent="18" name="carEntity">
+    <column id="28" parent="24" name="carEntity">
       <Position>3</Position>
       <DataType>varchar(20)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="22" parent="18" name="carPrice">
+    <column id="29" parent="24" name="carPrice">
       <Position>4</Position>
       <DataType>varchar(20)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="23" parent="18" name="carSize">
+    <column id="30" parent="24" name="carSize">
       <Position>5</Position>
       <DataType>varchar(20)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="24" parent="18" name="carFuelConsumption">
+    <column id="31" parent="24" name="carFuelConsumption">
       <Position>6</Position>
       <DataType>varchar(20)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="25" parent="18" name="carDisplacement">
+    <column id="32" parent="24" name="carDisplacement">
       <Position>7</Position>
       <DataType>varchar(20)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <key id="26" parent="18" name="PRIMARY">
+    <key id="33" parent="24" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="34" parent="25" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="35" parent="25" name="username">
+      <Position>2</Position>
+      <DataType>varchar(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="36" parent="25" name="password">
+      <Position>3</Position>
+      <DataType>varchar(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="37" parent="25" name="sex">
+      <Position>4</Position>
+      <DataType>varchar(20)|0</DataType>
+    </column>
+    <column id="38" parent="25" name="phone">
+      <Position>5</Position>
+      <DataType>varchar(20)|0</DataType>
+    </column>
+    <column id="39" parent="25" name="age">
+      <Position>6</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="40" parent="25" name="position">
+      <Position>7</Position>
+      <DataType>varchar(20)|0</DataType>
+    </column>
+    <key id="41" parent="25" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>

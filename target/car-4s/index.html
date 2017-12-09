@@ -80,12 +80,11 @@ input{
     	 <div class="bei2">
 	        <div id="login">  
 	            <h1>4S-汽车后台管理</h1>
-	            <form action="/car/CarServlet?method=login" method="post">
-	                <input type="text" required="required" placeholder="用户名" name="name"/>
-	                <input type="password" required="required" placeholder="密码" name="psw"/>
+	            <form action="/user_login" method="post">
+	                <input type="text" required="required" placeholder="用户名" name="user.username"/>
+	                <input type="password" required="required" placeholder="密码" name="user.password"/>
 	                <button class="but" type="submit">登录</button>
-
-                    <button  class="but" type="button">注册</button>
+                    <button  class="but" type="reset">重置</button>
                 </form>
 	        </div> 
          </div>

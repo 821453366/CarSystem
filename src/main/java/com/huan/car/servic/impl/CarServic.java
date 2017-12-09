@@ -13,6 +13,7 @@ import java.util.List;
 public class CarServic implements ICarServic {
     private ICarDao carDao = new CarDao();
 
+    @Override
     public List<CarBean> carFind() {
         try {
             return carDao.carFind();
@@ -45,6 +46,7 @@ public class CarServic implements ICarServic {
         }
     }
 
+    @Override
     public void delete(int id) {
         try {
             carDao.delete(id);
