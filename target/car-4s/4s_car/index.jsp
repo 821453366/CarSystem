@@ -50,16 +50,12 @@
 									</a>
 								</dd>
 								<dd>
-									<a href="../login.html"><i class="fa fa-sign-out" aria-hidden="true"></i> 注销</a>
+									<a href="/user_logout.action"><i class="fa fa-sign-out" aria-hidden="true"></i> 注销</a>
 								</dd>
 							</dl>
 						</li>
 					</ul>
-					<ul class="layui-nav admin-header-item-mobile">
-						<li class="layui-nav-item">
-							<a href="../login.html"><i class="fa fa-sign-out" aria-hidden="true"></i> 注销</a>
-						</li>
-					</ul>
+
 				</div>
 			</div>
 			<div class="layui-side layui-bg-black" id="admin-side">

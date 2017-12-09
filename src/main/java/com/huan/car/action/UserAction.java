@@ -3,9 +3,11 @@ package com.huan.car.action;
 import com.huan.car.entity.User;
 import com.huan.car.servic.IUserService;
 import com.huan.car.servic.impl.UserService;
+import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * @author 马欢欢
@@ -19,9 +21,18 @@ public class UserAction extends ActionSupport {
         List<User> users = userService.login(user);
         System.out.println(users);
         if(users.size() != 0){
+            ActionContext actionContext = ActionContext.getContext();
+            Map session = actionContext.getSession();
+            session.put("user",users.get(0));
             return "success";
         }
         return "fail";
+    }
+    public String logout(){
+        ActionContext actionContext = ActionContext.getContext();
+        Map session = actionContext.getSession();
+        session.remove("user");
+        return "logout";
     }
 
     public String addUser() {

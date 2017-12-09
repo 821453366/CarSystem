@@ -1,3 +1,46 @@
+package com.huan.car.action;
+
+import com.huan.car.entity.CarBean;
+import com.huan.car.servic.ICarServic;
+import com.huan.car.servic.impl.CarServic;
+import com.opensymphony.xwork2.ActionSupport;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+/**
+ * @author 马欢欢
+ * @date 2017/12/9
+ */
+public class CarAction extends ActionSupport {
+    private List<CarBean> carList;
+    private ICarServic carServic = new CarServic();
+
+    public String find() {
+        List<CarBean> carBean = carServic.carFind();
+        carList = carBean;
+        return "resultData";
+    }
+
+    public List<CarBean> getCarList() {
+        return carList;
+    }
+
+    public void setCarList(List<CarBean> carList) {
+        this.carList = carList;
+    }
+
+    public ICarServic getCarServic() {
+        return carServic;
+    }
+
+    public void setCarServic(ICarServic carServic) {
+        this.carServic = carServic;
+    }
+}
+
+
 //package com.huan.car.action;
 //
 //import com.huan.car.entity.CarBean;
@@ -47,11 +90,7 @@
 //        }
 //    }
 //
-//    protected void carFind(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-//        List<CarBean> carBean = carServic.carFind();
-//        JSONArray jsonArray = JSONArray.fromObject(carBean);
-//        resp.getWriter().print(jsonArray);
-//    }
+
 //    protected void save(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 //        CarBean carBean = new CarBean();
 //        carBean.setCarname(req.getParameter("carname"));
@@ -61,7 +100,7 @@
 //        carBean.setCarFuelConsumption(req.getParameter("carFuelConsumption"));
 //        carBean.setCarDisplacement(req.getParameter("carDisplacement"));
 ////        carServic.save(carBean);
-//        resp.sendRedirect(req.getContextPath()+"/4s_car/button.jsp");
+//        resp.sendRedirect(req.getContextPath()+"/4s_car/car.jsp");
 //    }
 //
 //

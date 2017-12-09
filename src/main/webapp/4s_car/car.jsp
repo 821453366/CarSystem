@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@taglib prefix="s" uri="/struts-tags" %>
 <!doctype html>
 <html>
 <head>
@@ -22,8 +23,9 @@
         $("#refer_div2").hide();
         var cartype = [];
         var dataLength = [];
-        $.post("/CarServlet?method=carFind",
+        $.post("/car_find",
             function (data, status) {
+            console.log(data)
                 for (var i = 0; i < data.length; i++) {
                     cartype = data[i];
 
@@ -51,9 +53,9 @@
     });
 
     //编辑数据
-    function dele(id){
+    function dele(id) {
         $.post("/CarServlet?method=delect",
-            {id :id},
+            {id: id},
             function (data, status) {
                 alert("删除成功");
                 window.location.reload();
@@ -150,14 +152,16 @@
                 <div class='layui-inline'>
                     <label class='layui-form-label'>耗油量</label>
                     <div class='layui-input-inline'>
-                        <input type='text' name='carFuelConsumption' lay-verify='text' autocomplete='off' class='layui-input'>
+                        <input type='text' name='carFuelConsumption' lay-verify='text' autocomplete='off'
+                               class='layui-input'>
                     </div>
                 </div>
 
                 <div class='layui-inline'>
                     <label class='layui-form-label'>库存</label>
                     <div class='layui-input-inline'>
-                        <input type='text' name='carDisplacement' lay-verify='text' autocomplete='off' class='layui-input'>
+                        <input type='text' name='carDisplacement' lay-verify='text' autocomplete='off'
+                               class='layui-input'>
                     </div>
                 </div>
 
@@ -172,7 +176,11 @@
         </div>
     </form>
 
+
 </div>
 
+<div>
+
+</div>
 
 </html>

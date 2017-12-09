@@ -9,7 +9,8 @@
         <action name="user_*" class="com.huan.car.action.UserAction" method="{1}">
             <result name="success" type="redirect">/4s_car/index.jsp</result>
             <result name="fail" type="redirect">/index.html</result>
-            <allowed-methods>login,addUser</allowed-methods>
+            <result name="logout" type="redirect">/index.html</result>
+            <allowed-methods>login,addUser,logout</allowed-methods>
         </action>
     </package>
 
