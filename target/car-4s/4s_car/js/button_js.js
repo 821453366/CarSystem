@@ -10,7 +10,7 @@ $(document).ready(function () {
 
         layer.open({
             type: 1,
-            title: '4s汽车管理系统',
+            title: '添加车系',
             area: ['700px', '300px'],
             skin: 'yourclass',
             content: $('#refer_div')
@@ -18,17 +18,6 @@ $(document).ready(function () {
         });
     });
 
-    $("#refer2").click(function () {
-
-        layer.open({
-            type: 1,
-            title: '4s汽车管理系统',
-            area: ['700px', '300px'],
-            skin: 'yourclass',
-            content: $('#refer_div')
-
-        });
-    });
     //自带js框架
     layui.use(['form', 'layedit', 'laydate'], function() {
         var form = layui.form(),

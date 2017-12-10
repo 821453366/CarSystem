@@ -10,7 +10,8 @@
             <result name="resultData" type="json">
                 <param name="root">resultData</param>
             </result>
-            <allowed-methods>find,delete,add</allowed-methods>
+            <result name = "success" type="redirect">4s_car/car.jsp</result>
+            <allowed-methods>find,delete,add,queryById,update</allowed-methods>
         </action>
     </package>
 

@@ -13,6 +13,11 @@ var navs = [{
 	"href": "form_a.html",
 	"spread": false
 },{
+	"title": "客户信息",
+	"icon": "fa-stop-circle",
+	"href": "form_a.html",
+	"spread": false
+},{
 	"title": "关于我们",
 	"icon": "fa-stop-circle",
 	"href": "form_a.html",

@@ -36,7 +36,9 @@ public class CarDao extends BaseDao implements ICarDao {
 
     @Override
     public void update(CarBean carBean) {
-
+        String sql ="update car SET carname = ? ,carEntity = ? ,carPrice=?, carSize = ?,carFuelConsumption = ?,carDisplacement = ? where id = ?";
+        Object[] paramsValue = {carBean.getCarname(),carBean.getCarEntity(),carBean.getCarPrice(),carBean.getCarSize(),carBean.getCarFuelConsumption(),carBean.getCarDisplacement(),carBean.getId()   };
+        super.update(sql,paramsValue);
     }
 
     @Override

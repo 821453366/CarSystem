@@ -38,7 +38,7 @@
                         "<td>" + cartype['carFuelConsumption'] + "</td>" +
                         "<td>" + cartype['carDisplacement'] + "</td>" +
                         "<td>" +
-                        "<button   class='layui-btn layui-btn-small'>编辑</button>" +
+                        "<button   class='layui-btn layui-btn-small'  onclick='update(" + cartype['id'] + ")'>编辑</button>" +
                         "<button href='javascript:;' data-id='1' data-opt='del' class='layui-btn layui-btn-danger layui-btn-small' onclick='dele( " + cartype['id'] + ")'>删除</button>" +
                         "</td> </tr>"
                     );
@@ -64,6 +64,27 @@
             //向服务端发送删除指令
         });
 
+    }
+    function update(id) {
+        $.post("/car_queryById",{id:id},function (data) {
+            data = data.data[0];
+            $("#update_div").find("input[name = 'carBean.id']").val(data['id']);
+            $("#update_div").find("input[name = 'carBean.carEntity']").val(data['carEntity']);
+            $("#update_div").find("input[name = 'carBean.carPrice']").val(data['carPrice']);
+            $("#update_div").find("input[name = 'carBean.carSize']").val(data['carSize']);
+            $("#update_div").find("input[name = 'carBean.carFuelConsumption']").val(data['carFuelConsumption']);
+            $("#update_div").find("input[name = 'carBean.carDisplacement']").val(data['carDisplacement']);
+        layer.open({
+            type: 1,
+            title: '信息修改',
+            area: ['700px', '300px'],
+            skin: 'yourclass',
+            content: $('#update_div')
+        });
+
+//                document.getElementById("aa").options["东风本田"].selected = true;
+//            var  i=document.getElementById('sel').options[document.getElementById('sel').selectedIndex].value;
+        });
     }
 
 </script>
@@ -109,7 +130,7 @@
 <script type='text/javascript' src='plugins/layui/layui.js'></script>
 </body>
 
-<div id='refer_div' >
+<div id='refer_div' hidden>
     <form class='layui-form' id ="info">
         <div class='huan_a'></div>
         <div class='layui-form-item'>
@@ -171,6 +192,77 @@
                 <div class='huan_a'></div>
                 <div class='layui-input-block huan_center'>
                     <button class='layui-btn' type='button' onclick="addCar()">立即提交</button>
+                    <button type='reset' class='layui-btn layui-btn-primary'>重置</button>
+                </div>
+            </div>
+        </div>
+    </form>
+
+
+</div>
+<div id='update_div' hidden>
+    <form class='layui-form' id ="update_info" action="/car_update" method="post">
+        <div class='huan_a'></div>
+        <div class='layui-form-item'>
+            <input hidden name = "carBean.id">
+            <label class='layui-form-label'>品牌</label>
+            <div class='layui-input-inline'>
+                <select name='carBean.carname' id="aa" lay-filter='aihao'>
+                    <%--<option value=''></option>--%>
+                    <option value='宝马' >宝马</option>
+                    <option value='东风本田'>东风本田</option>
+                    <option value='大众' >大众</option>
+                    <option value='吉利'>吉利</option>
+                    <option value='本田'>本田</option>
+                    <option value='雪佛兰'>雪佛兰</option>
+                    <option value='现代'>现代</option>
+                    <option value='标志'>标志</option>
+                    <option value='马自达'>马自达</option>
+                </select>
+            </div>
+            <div class='layui-inline'>
+                <label class='layui-form-label'>车型号</label>
+                <div class='layui-input-inline'>
+                    <input type='text' name='carBean.carEntity' lay-verify='text' autocomplete='off' class='layui-input'>
+                </div>
+            </div>
+            <div class='layui-form-item'>
+                <div class='layui-inline'>
+                    <label class='layui-form-label'>价钱</label>
+                    <div class='layui-input-inline'>
+                        <input type='text' name='carBean.carPrice' lay-verify='text' autocomplete='off' class='layui-input'>
+                    </div>
+                </div>
+
+                <div class='layui-inline'>
+                    <label class='layui-form-label'>座位</label>
+                    <div class='layui-input-inline'>
+                        <input type='text' name='carBean.carSize' lay-verify='text' autocomplete='off' class='layui-input'>
+                    </div>
+                </div>
+            </div>
+            <div class='layui-form-item'>
+                <div class='layui-inline'>
+                    <label class='layui-form-label'>耗油量</label>
+                    <div class='layui-input-inline'>
+                        <input type='text' name='carBean.carFuelConsumption' lay-verify='text' autocomplete='off'
+                               class='layui-input'>
+                    </div>
+                </div>
+
+                <div class='layui-inline'>
+                    <label class='layui-form-label'>库存</label>
+                    <div class='layui-input-inline'>
+                        <input type='text' name='carBean.carDisplacement' lay-verify='text' autocomplete='off'
+                               class='layui-input'>
+                    </div>
+                </div>
+
+            </div>
+            <div class='layui-form-item'>
+                <div class='huan_a'></div>
+                <div class='layui-input-block huan_center'>
+                    <button class='layui-btn' type='submit'>立即提交</button>
                     <button type='reset' class='layui-btn layui-btn-primary'>重置</button>
                 </div>
             </div>
