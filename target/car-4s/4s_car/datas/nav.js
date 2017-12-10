@@ -10,12 +10,12 @@ var navs = [{
 	]},{
 	"title": "用户信息",
 	"icon": "fa-stop-circle",
-	"href": "form_a.html",
+	"href": "user.jsp",
 	"spread": false
 },{
 	"title": "客户信息",
 	"icon": "fa-stop-circle",
-	"href": "form_a.html",
+	"href": "user.jsp",
 	"spread": false
 },{
 	"title": "关于我们",

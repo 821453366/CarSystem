@@ -14,5 +14,31 @@ public interface IUserService {
      * @return
      */
     List<User> login (User user);
+
+    /**
+     * 查询
+     */
+    List<User> userFind();
+
+    /**
+     * 根据id查询
+     *
+     */
+    List<User> userFind(int id);
+
+    /**
+     * 添加
+     */
+    void save(User user);
+
+    /**
+     * 更新
+     */
+    void update(User user);
+
+    /**
+     *删除
+     */
+    void delete(int id);
 }
 

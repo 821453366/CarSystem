@@ -70,7 +70,7 @@ public class CarAction extends ActionSupport {
             e.printStackTrace();
             resultData = GeneralResults.success(GeneralMessage.UPDATE_FAILURE);
         }
-        return SUCCESS;
+        return "update";
     }
 
     public GeneralResults getResultData() {

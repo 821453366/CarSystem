@@ -18,4 +18,44 @@ public class UserService implements IUserService {
     public List<User> login(User user) {
         return userDao.login(user);
     }
+
+    public List<User> userFind() {
+        try {
+            return userDao.userFind();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public List<User> userFind(int id) {
+        try {
+            return userDao.userFind(id);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public void save(User user) {
+        try {
+            userDao.save(user);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public void update(User user) {
+        try {
+            userDao.update(user);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public void delete(int id) {
+        try {
+            userDao.delete(id);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
 }

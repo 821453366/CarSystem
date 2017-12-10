@@ -5,12 +5,16 @@
 
 <struts>
 
-    <package name="user" extends="struts-default">
+    <package name="user" extends="json-default,struts-default">
         <action name="user_*" class="com.huan.car.action.UserAction" method="{1}">
             <result name="success" type="redirect">/4s_car/index.jsp</result>
             <result name="fail" type="redirect">/index.html</result>
             <result name="logout" type="redirect">/index.html</result>
-            <allowed-methods>login,addUser,logout</allowed-methods>
+            <result name="resultData" type="json">
+                <param name="root">resultData</param>
+            </result>
+            <result name = "update" type="redirect">4s_car/user.jsp</result>
+            <allowed-methods>login,logout,find,delete,add,queryById,update</allowed-methods>
         </action>
     </package>
 

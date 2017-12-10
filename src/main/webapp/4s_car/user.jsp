@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="plugins/font-awesome/css/font-awesome.min.css">
     <script type="text/javascript" src="js/jquery.min.js"></script>
     <script type="text/javascript" src="js/layui.js" charset="utf-8"></script>
-    <script type="text/javascript" src="js/button_js.js" charset="utf-8"></script>
+    <script type="text/javascript" src="js/user.js" charset="utf-8"></script>
 </head>
 <script type="text/javascript">
     $(document).ready(function () {
@@ -23,7 +23,7 @@
         $("#refer_div2").hide();
         var cartype = [];
         var dataLength = [];
-        $.post("/car_find",
+        $.post("/user_find",
             function (data) {
                 data = data.data;
                 for (var i = 0; i < data.length; i++) {
@@ -37,7 +37,7 @@
                         "<td>" + cartype['age'] + "</td>" +
                         "<td>" + cartype['position'] + "</td>" +
                         "<td>" +
-                        "<button   class='layui-btn layui-btn-small'>编辑</button>" +
+                        "<button   class='layui-btn layui-btn-small'  onclick='update(" + cartype['id'] + ")'>编辑</button>" +
                         "<button href='javascript:;' data-id='1' data-opt='del' class='layui-btn layui-btn-danger layui-btn-small' onclick='dele( " + cartype['id'] + ")'>删除</button>" +
                         "</td> </tr>"
                     );
@@ -52,10 +52,10 @@
     //编辑数据
     function dele(id) {
         layer.confirm('确认删除？', function (index) {
-            $.post("/car_delete",
+            $.post("/user_delete",
                 {id: id},
                 function (data) {
-                    layer.msg(data.msg,{time:300}, function () {
+                    layer.msg(data.msg, {time: 300}, function () {
                         window.location.reload();
                     });
                 });
@@ -65,19 +65,45 @@
 
     }
 
+    function update(id) {
+        $.post("/user_queryById", {id: id}, function (data) {
+            data = data.data[0];
+            $("#update_div").find("input[name = 'user.id']").val(data['id']);
+            $("#update_div").find("input[name = 'user.username']").val(data['username']);
+            $("#update_div").find("input[name = 'user.sex']").val(data['sex']);
+            $("#update_div").find("input[name = 'user.phone']").val(data['phone']);
+            $("#update_div").find("input[name = 'user.age']").val(data['age']);
+            $("#update_div").find("input[name = 'user.position']").val(data['position']);
+            layer.open({
+                type: 1,
+                title: '信息修改',
+                area: ['700px', '300px'],
+                skin: 'yourclass',
+                content: $('#update_div')
+            });
+        });
+    }
+
 </script>
 
 <body>
 
 <div id='la' style='margin: 15px;'>
     <fieldset class='layui-elem-field site-demo-button'>
-        <legend>4S汽车数据统计</legend>
+        <legend>用户信息</legend>
         <div style=''>
 
-            <div class='layui-btn-group'>
-                <button id='refer' class='refer layui-btn layui-btn-normal layui-btn'><i class='layui-icon'></i>&nbsp;增加车系
+
+            <blockquote class="layui-elem-quote layui-quote-nm" id="footer">
+                <button id='refer' class='refer layui-btn layui-btn-normal layui-btn'><i class='layui-icon'></i>&nbsp;添加用户
                 </button>
-            </div>
+                <div class='layui-input-inline'>
+                    <input type='text' name='user.username' lay-verify='text' autocomplete='off'
+                           class='layui-input' placeholder="姓名搜索">
+                </div>
+                <button id='sousuo'  class='refer layui-btn layui-btn-radius layui-btn'><i class='layui-icon'></i>&nbsp;搜索
+                </button>
+            </blockquote>
 
         </div>
         <div>
@@ -107,63 +133,63 @@
 <script type='text/javascript' src='plugins/layui/layui.js'></script>
 </body>
 
-<div id='refer_div' >
-    <form class='layui-form' id ="info">
+<div id='refer_div' hidden>
+    <form class='layui-form' id="info">
         <div class='huan_a'></div>
         <div class='layui-form-item'>
-            <label class='layui-form-label'>品牌</label>
-            <div class='layui-input-inline'>
-                <select name='carBean.carname' lay-filter='aihao'>
-                    <%--<option value=''></option>--%>
-                    <option value='宝马' selected=''>宝马</option>
-                    <option value='东风本田'>东风本田</option>
-                    <option value='大众'>大众</option>
-                    <option value='吉利'>吉利</option>
-                    <option value='本田'>本田</option>
-                    <option value='雪佛兰'>雪佛兰</option>
-                    <option value='现代'>现代</option>
-                    <option value='标志'>标志</option>
-                    <option value='马自达'>马自达</option>
-                </select>
+            <div class='layui-inline'>
+                <label class='layui-form-label'>姓名</label>
+                <div class='layui-input-inline'>
+                    <input type='text' name='user.username' lay-verify='text' autocomplete='off'
+                           class='layui-input'>
+                </div>
             </div>
             <div class='layui-inline'>
-                <label class='layui-form-label'>车型号</label>
+                <label class='layui-form-label'>性别</label>
                 <div class='layui-input-inline'>
-                    <input type='text' name='carBean.carEntity' lay-verify='text' autocomplete='off' class='layui-input'>
+                    <input type='radio' name='user.sex'
+                           class='layui-input' value="男" title="男" checked>
+                    <input type='radio' name='user.sex'
+                           class='layui-input' value="女" title="女">
                 </div>
             </div>
             <div class='layui-form-item'>
                 <div class='layui-inline'>
-                    <label class='layui-form-label'>价钱</label>
+                    <label class='layui-form-label'>手机号</label>
                     <div class='layui-input-inline'>
-                        <input type='text' name='carBean.carPrice' lay-verify='text' autocomplete='off' class='layui-input'>
-                    </div>
-                </div>
-
-                <div class='layui-inline'>
-                    <label class='layui-form-label'>座位</label>
-                    <div class='layui-input-inline'>
-                        <input type='text' name='carBean.carSize' lay-verify='text' autocomplete='off' class='layui-input'>
-                    </div>
-                </div>
-            </div>
-            <div class='layui-form-item'>
-                <div class='layui-inline'>
-                    <label class='layui-form-label'>耗油量</label>
-                    <div class='layui-input-inline'>
-                        <input type='text' name='carBean.carFuelConsumption' lay-verify='text' autocomplete='off'
+                        <input type='text' name='user.phone' lay-verify='text' autocomplete='off'
                                class='layui-input'>
                     </div>
                 </div>
 
                 <div class='layui-inline'>
-                    <label class='layui-form-label'>库存</label>
+                    <label class='layui-form-label'>职位</label>
                     <div class='layui-input-inline'>
-                        <input type='text' name='carBean.carDisplacement' lay-verify='text' autocomplete='off'
+                        <select name='user.position' lay-filter='aihao'>
+                            <%--<option value=''></option>--%>
+                            <option value='总经理' selected=''>总经理</option>
+                            <option value='销售经理'>销售经理</option>
+                            <option value='前台接待'>前台接待</option>
+                            <option value='销售员工'>销售员工</option>
+                        </select>
+                    </div>
+                </div>
+            <div class='layui-form-item'>
+                <div class='layui-inline'>
+                    <label class='layui-form-label'>年龄</label>
+                    <div class='layui-input-inline'>
+                        <input type='text' name='user.age' lay-verify='text' autocomplete='off'
                                class='layui-input'>
                     </div>
                 </div>
-
+                <div class='layui-inline'>
+                    <label class='layui-form-label'>密码</label>
+                    <div class='layui-input-inline'>
+                        <input type='password' name='user.password' lay-verify='text' autocomplete='off'
+                               class='layui-input'>
+                    </div>
+                </div>
+            </div>
             </div>
             <div class='layui-form-item'>
                 <div class='huan_a'></div>
@@ -174,8 +200,69 @@
             </div>
         </div>
     </form>
+</div>
+<div id='update_div' hidden>
+    <form class='layui-form' id="update_info" action="/user_update" method="post">
+        <div class='huan_a'></div>
+        <div class='layui-form-item'>
+            <input type='text'  name='user.id' hidden>
+            <div class='layui-inline'>
+                <label class='layui-form-label'>姓名</label>
+                <div class='layui-input-inline'>
+                    <input type='text' name='user.username' lay-verify='text' autocomplete='off'
+                           class='layui-input'>
+                </div>
+            </div>
+            <div class='layui-inline'>
+                <label class='layui-form-label'>性别</label>
+                <div class='layui-input-inline'>
+                    <input type='radio' name='user.sex'
+                           class='layui-input' value="男" title="男" checked>
+                    <input type='radio' name='user.sex'
+                           class='layui-input' value="女" title="女">
+                </div>
+            </div>
+            <div class='layui-form-item'>
+                <div class='layui-inline'>
+                    <label class='layui-form-label'>手机号</label>
+                    <div class='layui-input-inline'>
+                        <input type='text' name='user.phone' lay-verify='text' autocomplete='off'
+                               class='layui-input'>
+                    </div>
+                </div>
 
+                <div class='layui-inline'>
+                    <label class='layui-form-label'>职位</label>
+                    <div class='layui-input-inline'>
+                        <select name='user.position' lay-filter='aihao'>
+                            <%--<option value=''></option>--%>
+                            <option value='总经理' selected=''>总经理</option>
+                            <option value='销售经理'>销售经理</option>
+                            <option value='前台接待'>前台接待</option>
+                            <option value='销售员工'>销售员工</option>
+                        </select>
+                    </div>
+                </div>
+                <div class='layui-form-item'>
+                    <div class='layui-inline'>
+                        <label class='layui-form-label'>年龄</label>
+                        <div class='layui-input-inline'>
+                            <input type='text' name='user.age' lay-verify='text' autocomplete='off'
+                                   class='layui-input'>
+                        </div>
+                    </div>
 
+                </div>
+            </div>
+            <div class='layui-form-item'>
+                <div class='huan_a'></div>
+                <div class='layui-input-block huan_center'>
+                    <button class='layui-btn' type='submit' >立即提交</button>
+                    <button type='reset' class='layui-btn layui-btn-primary'>重置</button>
+                </div>
+            </div>
+        </div>
+    </form>
 </div>
 
 <div>
